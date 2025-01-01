@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # Spring Boot 애플리케이션 서비스
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      # 스프링 프로필 설정
+      - SPRING_PROFILES_ACTIVE=production
+      
+      # JVM 메모리 설정
+      - JAVA_TOOL_OPTIONS=-Xmx512m -Xms256m
+      
+      # 로깅 설정
+      - LOGGING_LEVEL_ROOT=INFO
+      - LOGGING_FILE_PATH=/app/logs
+    
+    # 컨테이너 재시작 정책
+    restart: unless-stopped
+    
+    # 볼륨 마운트 (로그 및 임시 파일)
+    volumes:
+      - ./logs:/app/logs
+      - /tmp:/tmp
+
+  # 선택적: 데이터베이스 서비스 (필요한 경우)
+  # database:
+  #   image: postgres:13
+  #   environment:
+  #     - POSTGRES_DB=findjob
+  #     - POSTGRES_USER=user
+  #     - POSTGRES_PASSWORD=password
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+
+# 볼륨 설정
+volumes:
+  # postgres_data:  # 데이터베이스 볼륨 (주석 해제 시)
+  logs:  # 로그 볼륨
+
+# 네트워크 설정 (선택적)
+networks:
+  default:
+    driver: bridge

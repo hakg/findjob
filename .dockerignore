@@ -1,0 +1,72 @@
+# Git 관련 파일
+.git
+.gitignore
+.github
+
+# Gradle 관련
+.gradle/
+gradle/
+build/
+bin/
+out/
+*.gradle
+gradlew
+gradlew.bat
+
+# IDE 설정 파일
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.log
+*.class
+
+# 개발 환경 설정
+*.env
+*.env.local
+*.env.development
+*.env.production
+
+# 테스트 관련
+src/test/
+**/test/
+**/*Test.class
+**/*Tests.class
+
+# 문서 및 기타 파일
+HELP.md
+README.md
+LICENSE
+*.md
+
+# 로그 및 임시 파일
+logs/
+tmp/
+*.tmp
+*.bak
+
+# macOS 시스템 파일
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 보안 및 민감 정보
+**/*.key
+**/*.pem
+**/*.crt
+**/*.p12
+
+# 불필요한 네이티브 라이브러리
+**/*.so
+**/*.dll
+**/*.dylib
+
+# Spring Boot 특정 제외 파일
+MANIFEST.MF
+dependency-reduced-pom.xml
+
+# 기타 제외 파일
+**/node_modules/
+**/.next/
+**/target/
