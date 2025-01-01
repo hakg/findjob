@@ -47,3 +47,17 @@ cd findjob
 
 # 애플리케이션 실행
 ./gradlew bootRun
+```
+
+### 추후 작업할 내용
+## 구글 시트 데이터 적재 기능 구현
+  - Google Sheets API 연동
+  - 크롤링된 채용 정보 자동 스프레드시트 업데이트
+  - 주기적인 데이터 동기화 메커니즘
+  - 데이터 형식 및 컬럼 매핑
+  - 중복 데이터 방지 로직
+## Render 무료 호스팅 서비스 처리
+  - GitHub Actions 통한 CI/CD 구현
+
+## 알림
+  - Slack/Discord 채널 채용 공고 알림
